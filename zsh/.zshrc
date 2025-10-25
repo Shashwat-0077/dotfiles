@@ -1,8 +1,5 @@
-# SSH key setup with keychain (modern way)
+# --- SSH key setup with keychain ---
 SSH_KEY="$HOME/.ssh/id_ed25519"
-
-# Start keychain without deprecated --agents
-eval $(keychain --quiet "$SSH_KEY")
 
 # Stop further scripts if key doesn't exist
 if [ ! -f "$SSH_KEY" ]; then
@@ -10,6 +7,10 @@ if [ ! -f "$SSH_KEY" ]; then
     echo "Generate one with: ssh-keygen -t ed25519 -C \"your_email@example.com\""
     return 1
 fi
+
+# Start keychain and add your key (modern syntax, quiet mode)
+# This will ask passphrase **once per login** and keep the key in agent
+eval $(keychain --quiet --eval "$SSH_KEY")
 
 
 # Set the directory we want to store zinit and plugins
