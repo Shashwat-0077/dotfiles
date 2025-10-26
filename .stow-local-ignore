@@ -1,0 +1,16 @@
+# Ignore Git metadata
+
+^.git$
+
+# Ignore README files
+
+^README.md$
+
+# Ignore local config or backup files
+
+\.bak$
+\.local$
+
+# Ignore specific file or folder
+
+guides
