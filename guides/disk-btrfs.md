@@ -194,5 +194,6 @@ df -h
 sudo btrfs subvolume list /
 
 # Check bootloader installation
+bootctl install
 bootctl status  # For systemd-boot
 ```
