@@ -144,3 +144,13 @@ export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin
 export PATH=$PATH:/opt/android-sdk/platform-tools
 export PATH=$PATH:/opt/android-sdk/emulator
+
+# Turso
+export PATH="$PATH:/home/shasha/.turso"
+
+# bun completions
+[ -s "/home/shasha/.bun/_bun" ] && source "/home/shasha/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
