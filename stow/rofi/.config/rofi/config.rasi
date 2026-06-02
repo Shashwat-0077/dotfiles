@@ -1,0 +1,96 @@
+configuration {
+    show-icons:                 true;
+    display-drun:               ""; /* Requires a Nerd Font or FontAwesome */
+    drun-display-format:        "{name}";
+    disable-history:            false;
+    click-to-exit:              true;
+    location:                   0;
+}
+
+* {
+    /* Define your font here */
+    font:   "Noto Sans 11";
+
+    /* Colors */
+    bg-col: rgba(30, 30, 30, 0.7);       /* Semi-transparent dark background */
+    bg-col-light: rgba(255, 255, 255, 0.08); /* Lighter translucent for search/selection */
+    fg-col: #e0e0e0;                     /* Text color */
+    fg-col-muted: rgba(224, 224, 224, 0.5); /* Placeholder text color */
+
+    background-color: transparent;
+}
+
+window {
+    transparency: "real";
+    background-color: @bg-col;
+    text-color: @fg-col;
+    border: 0px;
+    border-radius: 12px;
+    width: 850px;
+    padding: 30px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 25px;
+}
+
+inputbar {
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    expand: false;
+    border-radius: 8px;
+    padding: 12px 20px;
+    spacing: 15px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @fg-col-muted;
+    font: "FiraCode Nerd Font 12"; /* Adjust this if your search icon doesn't load */
+    vertical-align: 0.5;
+}
+
+entry {
+    text-color: @fg-col;
+    placeholder: "Search";
+    placeholder-color: @fg-col-muted;
+    expand: true;
+    horizontal-align: 0;
+    vertical-align: 0.5;
+    blink: true;
+}
+
+listview {
+    columns: 5;
+    lines: 3;
+    spacing: 15px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    orientation: vertical;
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-color: @fg-col;
+}
+
+element-icon {
+    size: 48px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    expand: true;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 10px 0px 0px 0px;
+    text-color: inherit;
+}
+
+element selected {
+    background-color: @bg-col-light;
+    text-color: #ffffff;
+}
